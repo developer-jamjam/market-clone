@@ -1,0 +1,31 @@
+@import "reset.css";
+@import "header.css";
+@import "footer.css";
+@import "main.css";
+/* import해서 한군데에 CSS를 모아준다. 그리고나서 해당 CSS파일만 index.html에 link*/
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+    "Pretendard Variable", Pretendard, Roboto, "Noto Sans KR", "Segoe UI",
+    "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    sans-serif;
+}
+
+.media-info-msg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: aquamarine;
+  opacity: 1;
+}
+
+@media screen and (max-width: 380px) {
+  .media-info-msg {
+    opacity: 0;
+  }
+}

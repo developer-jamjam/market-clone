@@ -2,10 +2,12 @@ const form = document.getElementById("write-form");
 
 const handleSubmitForm = async (e) => {
   e.preventDefault();
+  const formbody = new FormData(form);
+  formbody.append("insertAt", new Date().getTime());
   try {
     const res = await fetch("/items", {
       method: "POST",
-      body: new FormData(form),
+      body: formbody,
     });
     const data = await res.json();
 

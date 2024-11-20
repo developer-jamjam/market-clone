@@ -14,12 +14,15 @@ async def create_item(
         title:Annotated[str,Form()],
         price:Annotated[int,Form()],
         description:Annotated[str,Form()],
-        place:Annotated[str,Form()]):
+        place:Annotated[str,Form()],
+        insertAt:Annotated[int,Form()]
+        ):
     
     image_bytes= await image.read()
     cur.execute(f"""
-                INSERT INTO carotitems(title,image,price,description,place)
-                VALUES ('{title}','{image_bytes.hex()}',{price},'{description}','{place}')
+                INSERT INTO 
+                carotitems(title,image,price,description,place,insertAt)
+                VALUES ('{title}','{image_bytes.hex()}',{price},'{description}','{place}',{insertAt})
                 """)
     con.commit()
     return '200'
